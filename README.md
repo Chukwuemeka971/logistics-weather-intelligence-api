@@ -143,8 +143,8 @@ Structured JSON Response
 ### Clone Repository
 
 ```bash
-git clone <your-repository-url>
-cd weather-api-project
+git clone https://github.com/Chukwuemeka971/logistics-weather-intelligence-api.git
+cd logistics-weather-intelligence-api
 ```
 
 ---

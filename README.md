@@ -1,63 +1,73 @@
-# SkyRide Logistics Weather Intelligence API
+# SkyRide Weather Intelligence API
 
-A backend weather intelligence service built with FastAPI that helps logistics companies make smarter operational decisions using real-time weather data.
+A backend weather intelligence service built with FastAPI to support smarter logistics operations through real-time weather monitoring and API integration.
 
-This project was developed as a data engineering and API integration case study for SkyRide Logistics Ltd, a logistics company facing delivery delays caused by sudden weather changes and poor visibility. 
+This project was developed as part of a logistics-focused data engineering case study for SkyRide Logistics Ltd, where weather disruptions were affecting delivery operations, route planning, and customer satisfaction. 
 
 ---
 
 ## Business Problem
 
-SkyRide Logistics experienced:
+SkyRide Logistics experienced operational challenges caused by sudden weather changes, including:
 
-- Delivery delays caused by heavy rainfall and poor visibility
-- Customer dissatisfaction from inaccurate delivery expectations
+- Delivery delays due to rainfall and poor visibility
 - Inefficient manual weather checks
-- Lack of location-specific weather insights for dispatch planning
+- Lack of location-specific weather intelligence
+- Reduced customer satisfaction from delayed deliveries
 
-To address this, the project integrates external weather APIs into a web application backend to provide automated, real-time weather updates for operational decision-making. 
+The objective of this project was to build a backend weather service capable of providing automated, real-time weather information to support logistics decision-making. 
 
 ---
 
-## Project Objectives
+## My Contribution
 
-This project demonstrates how APIs can support business operations through:
+My contribution focused on backend engineering and API integration.
 
-- Real-time weather intelligence
-- API integration and data retrieval
-- Backend service development
-- Structured JSON response formatting
-- Frontend-backend communication
-- Operational optimization for logistics workflows
+Responsibilities included:
+
+- Developing the FastAPI backend service
+- Integrating Geoapify and OpenWeatherMap APIs
+- Building RESTful weather endpoints
+- Formatting raw API responses into structured JSON
+- Implementing environment variable management
+- Enabling frontend-backend communication using CORS middleware
+- Integrating backend services with an existing frontend dispatch dashboard
 
 ---
 
 ## Tech Stack
 
 ### Backend
-- FastAPI
 - Python
+- FastAPI
 - Requests
 - Uvicorn
 - Python-dotenv
 
-### APIs
-- OpenWeatherMap API
+### External APIs
 - Geoapify Geocoding API
+- OpenWeatherMap API
 
-### Frontend
-- Integrated with frontend weather dashboard application
+### Integration
+- Frontend dispatch dashboard integration using JavaScript Fetch API
 
 ---
 
 ## Features
 
+### Backend Features
 - Convert city names into geographic coordinates
 - Retrieve real-time weather information
-- Format raw API responses into clean structured JSON
-- RESTful API endpoints
-- Frontend integration support with CORS middleware
-- Environment variable management using `.env`
+- Format raw API responses into structured JSON
+- RESTful API endpoints using FastAPI
+- Environment variable management with `.env`
+- Frontend integration support using CORS middleware
+- Error handling for invalid city requests
+
+### Integration Features
+- Backend integration with an existing logistics dispatch dashboard
+- Real-time weather retrieval via asynchronous API requests
+- Structured weather intelligence responses for frontend rendering
 
 ---
 
@@ -73,7 +83,7 @@ Response:
 
 ```json
 {
-  "message": "Weather API is running"
+  "message": "SkyRide Logistics Weather API is running"
 }
 ```
 
@@ -125,15 +135,17 @@ Response:
 ## Project Architecture
 
 ```text
-Frontend Application
+Frontend Dispatch Dashboard
         ↓
-FastAPI Backend
+JavaScript Fetch API
         ↓
-Geoapify API (Coordinates)
+FastAPI Backend Service
         ↓
-OpenWeatherMap API (Weather Data)
+Geoapify Geocoding API
         ↓
-Structured JSON Response
+OpenWeatherMap API
+        ↓
+Structured Weather Intelligence Response
 ```
 
 ---
@@ -143,7 +155,7 @@ Structured JSON Response
 ### Clone Repository
 
 ```bash
-git clone https://github.com/Chukwuemeka971/logistics-weather-intelligence-api.git
+git clone <https://github.com/Chukwuemeka971/logistics-weather-intelligence-api>
 cd logistics-weather-intelligence-api
 ```
 
@@ -170,7 +182,7 @@ pip install -r requirements.txt
 
 ## Environment Variables
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project root directory:
 
 ```env
 GEOCODING_API_KEY=your_geoapify_api_key
@@ -185,7 +197,7 @@ OPENWEATHER_API_KEY=your_openweather_api_key
 uvicorn app:app --reload
 ```
 
-Server runs on:
+Application runs on:
 
 ```text
 http://127.0.0.1:8000
@@ -195,7 +207,7 @@ http://127.0.0.1:8000
 
 ## API Documentation
 
-FastAPI automatically generates Swagger documentation:
+FastAPI automatically generates Swagger API documentation:
 
 ```text
 http://127.0.0.1:8000/docs
@@ -208,42 +220,33 @@ http://127.0.0.1:8000/docs
 This project strengthened my understanding of:
 
 - REST API development
-- API integration workflows
 - Backend application architecture
+- Third-party API integration
+- Frontend-backend communication
 - JSON transformation and formatting
 - Environment variable management
-- Frontend-backend integration
 - Real-world logistics use cases for weather intelligence
 
 ---
 
 ## Business Impact
 
-This solution helps logistics operations improve:
+This solution supports logistics operations by enabling:
 
-- Route planning efficiency
-- Delivery scheduling
-- Operational visibility
-- Customer communication
-- Risk reduction during adverse weather conditions
+- Smarter route planning
+- Improved delivery scheduling
+- Better operational visibility
+- Faster weather awareness
+- More informed dispatch decisions
 
 ---
 
 ## Future Improvements
 
-- Add async API requests
+- Async API requests using `httpx`
 - Docker containerization
-- Deployment to cloud platforms
+- Cloud deployment
 - API response validation with Pydantic
 - Weather forecasting support
-- Database integration for historical weather analytics
+- Database integration for weather analytics
 - Route optimization intelligence
-
----
-
-## Author
-
-Chukwuemeka Nwankwo
-
-Aspiring Data Engineer | Backend API Development | Python | FastAPI
-
